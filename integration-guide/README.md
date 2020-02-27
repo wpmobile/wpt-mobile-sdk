@@ -65,13 +65,13 @@ The SDK requires 2 configuration parameters before you can use it to make reques
 2. Your paypoint ID - the ID if the paypoint configured in IPC that you want to target from this mobile device
 
 **Swift**
-```
+```swift
 Configuration.shared.configure(url: "ws://192.168.1.32:1000/stomp",
                                paypointId: "PAYPOINT_123")
 ```
 
 **Kotlin**
-```
+```kotlin
 Configuration.configure("wss://192.168.1.32:443/stomp",
                         "PAYPOINT_123")
 ```
@@ -112,14 +112,14 @@ To make a payment, first define the type of payment to make. The types of paymen
 * `CashRefund`
 
 **Swift**
-```
+```swift
 let paymentRequest = CardSale(merchantTransactionReference: "12345678AB", // A transaction reference defined by the merchant
                               value: 1099, // The value of the payment, in minor currency units
                               type: .cardPresent) // How the card will be presented
 ```
 
 **Kotlin**
-```
+```kotlin
 val paymentRequest = CardSale("12345678AB", // A transaction reference defined by the merchant
                               1099, // The value of the payment, in minor currency units
                               CardInteraction.CARD_PRESENT) // How the card will be presented
@@ -142,7 +142,7 @@ In the event an action is requested, the payment flow will pause until the actio
 To receive these responses, define a `PaymentHandler`:
 
 **Swift**
-```
+```swift
 let responseHandler: PaymentHandler
 
 let notificationReceived = { notification in
@@ -177,7 +177,7 @@ responseHandler = PaymentHandler(notificationReceived: notificationReceived,
 ```
 
 **Kotlin**
-```
+```kotlin
 var responseHandler: PaymentHandler? = null
 
 val notificationReceived = fun (notification: PaymentNotification) {
@@ -220,13 +220,13 @@ responseHandler = object : PaymentHandler() {
 And finally start the payment:
 
 **Swift**
-```
+```swift
 paymentManager.startPayment(request: paymentRequest
                             handler: responseHandler)
 ```
 
 **Kotlin**
-```
+```kotlin
 paymentManager.startPayment(paymentRequest,
                             responseHandler)
 ```
@@ -245,7 +245,7 @@ During the settlement flow, the following real-time responses will be returned t
 As with making a payment, define a `PaymentHandler` to receive these responses, then send the settle payment request:
 
 **Swift**
-```
+```swift
 let responseHandler = ...
 
 let settleRequest = PaymentSettleRequest(
@@ -258,7 +258,7 @@ paymentManager.settlePayment(request: settleRequest
 ```
 
 **Kotlin**
-```
+```kotlin
 val responseHandler = ...
 
 val settleRequest = PaymentSettleRequest("98765-4321-DF",
@@ -282,7 +282,7 @@ During the cancel flow, the following real-time responses will be returned to yo
 As with making and settling a payment, define a `PaymentHandler` to receive these responses, then send the cancel payment request:
 
 **Swift**
-```
+```swift
 let responseHandler = ...
 
 let cancelRequest = PaymentCancelRequest(
@@ -295,7 +295,7 @@ paymentManager.cancelPayment(request: cancelRequest
 ```
 
 **Kotlin**
-```
+```kotlin
 val responseHandler = ...
 
 val cancelRequest = PaymentCancelRequest("98765-4321-DF",
@@ -317,7 +317,7 @@ During the query flow, the following real-time responses will be returned to you
 As with making, settling or cancelling a payment, define a `PaymentHandler` to receive these responses, then send the query payment request:
 
 **Swift**
-```
+```swift
 let responseHandler = ...
 
 let queryRequest = PaymentQueryRequest(merchantTransactionReference: "12345678AB")
@@ -327,7 +327,7 @@ paymentManager.queryPayment(request: queryRequest
 ```
 
 **Kotlin**
-```
+```kotlin
 val responseHandler = ...
 
 val queryRequest = PaymentQueryRequest("12345678AB")
