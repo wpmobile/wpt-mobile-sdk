@@ -356,3 +356,5 @@ paymentManager.queryPayment(queryRequest,
 
 ### Query payment device status
 -->
+
+###### ©2020 Worldpay, LLC and/or its affiliates. All rights reserved.

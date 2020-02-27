@@ -20,3 +20,4 @@
 
 * [Download](test-harness/0.0.1/wpt-ipc-stub-0.0.1.jar)
 
+###### ©2020 Worldpay, LLC and/or its affiliates. All rights reserved.
