@@ -2,6 +2,17 @@
 
 > **Note:** The following guide is subject to change and available as a preview only.
 
+* [Set-up](#set-up)
+  * [Pre-requisites](#pre-requisites)
+  * [Install the SDK](#install-the-sdk)
+  * [Configure the SDK](#configure-the-sdk)
+* [Test harness](#test-harness)
+* [Payments](#payments)
+  * [Make a payment](#make-a-payment)
+  * [Settle a payment](#settle-a-payment)
+  * [Cancel a payment](#cancel-a-payment)
+  * [Query the last payment result](#query-the-last-payment-result)
+
 ## Set-up
 
 ### Pre-requisites
@@ -306,7 +317,7 @@ paymentManager.cancelPayment(cancelRequest,
                              paymentHandler)
 ```
 
-### Query last payment result
+### Query the last payment result
 
 To query the result of the last payment, you should pass the merchant transaction reference of the payment.
 
