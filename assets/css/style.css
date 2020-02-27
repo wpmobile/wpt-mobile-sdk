@@ -1,0 +1,22 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+// Hide buttons in the header
+.page-header a.btn {
+    display: none;
+}
+
+// Even out the padding
+.page-header {
+    padding: 1rem;
+}
+.page-header h1,h2 {
+    margin: 1rem;
+}
+
+// Hide the footer
+.site-footer {
+	display: none;
+}
