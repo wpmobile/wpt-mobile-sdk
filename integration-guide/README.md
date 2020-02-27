@@ -35,7 +35,7 @@ The Worldpay Total Mobile SDK for Android is provided as an `aar` file.
 
 Add the following in the `build.gradle` of your project to specify a local directory where local dependencies are kept (`libs` in this example, but any can be used):
 
-```
+```python
 allprojects {
    repositories {
       flatDir {
@@ -47,7 +47,7 @@ allprojects {
 
 Then, copy the `worldpay-total-sdk.aar` file into that local directory, and define it as a dependency for your app by adding the following to your app's `build.gradle`:
 
-```
+```python
 dependencies {
     compile(name:'worldpay-total-sdk', ext:'aar')
 }
@@ -84,7 +84,7 @@ The SDK test harness is an executable Java application that can be run on a Wind
 
 Run the test harness application by executing the following from your command line:
 
-```
+```shell
 java -jar wpt-ipc3-stub-&lt;version&gt;.jar
 ```
 
