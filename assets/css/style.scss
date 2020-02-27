@@ -3,12 +3,14 @@
 
 @import "{{ site.theme }}";
 
-// Hide buttons in the header
+/* Hide Github buttons in the header */
+
 .page-header a.btn {
     display: none;
 }
 
-// Even out the padding
+/* Tidy up the formatting of the header */
+
 .page-header {
     padding: 1rem;
 }
@@ -17,7 +19,58 @@
     margin: 1rem;
 }
 
-// Hide the footer
+/* Hide the footer */
+
 .site-footer {
 	display: none;
+}
+
+/* Set the main page colours */
+
+body {
+	color: #393939;
+}
+
+.page-header {
+	background-image: linear-gradient(90deg, #285BC5, #FF1F3E);
+}
+
+.main-content h1,
+.main-content h2,
+.main-content h3,
+.main-content h4,
+.main-content h5,
+.main-content h6 {
+	color: #393939;
+}
+
+ul,ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: li
+}
+
+li {
+  padding-left: 2em; 
+  text-indent: -.7em;
+}
+
+ul>li::before {
+  content: "• ";
+  padding-right: 0.5em;
+  color: #FF1F3E;
+}
+
+ol>li::before {
+  content: counter(li);
+  color: #FF1F3E;
+  display: inline-block; 
+  width: 1em;
+  padding-right:0.5em
+  margin-left: 0em
+}
+
+li {
+  counter-increment: li
 }

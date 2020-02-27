@@ -85,7 +85,7 @@ The SDK test harness is an executable Java application that can be run on a Wind
 Run the test harness application by executing the following from your command line:
 
 ```shell
-java -jar wpt-ipc3-stub-&lt;version&gt;.jar
+java -jar wpt-ipc3-stub-<version>.jar
 ```
 
 You can check the test harness is running by visiting [http://localhost:8080/actuator/health](http://localhost:8080/actuator/health).
