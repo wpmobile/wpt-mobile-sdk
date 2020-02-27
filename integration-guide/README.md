@@ -1,6 +1,6 @@
 # Integration Guide
 
-**Note:** *The following guide is subject to change and available as a preview only.*
+> **Note:** The following guide is subject to change and available as a preview only.
 
 ## Set-up
 
@@ -76,7 +76,7 @@ Configuration.configure("wss://192.168.1.32:443/stomp",
                         "PAYPOINT_123")
 ```
 
-### SDK Test Harness
+## Test harness
 
 A test harness is available for the SDK which allows payment flows to be executed without an IPC installation or payment terminals, by simulating typical scenarios.
 
