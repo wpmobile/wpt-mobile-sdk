@@ -37,6 +37,10 @@ body {
   color: #393939;
 }
 
+a {
+  color: #FF1F3E;
+}
+
 .page-header {
   background-image: linear-gradient(90deg, #285BC5, #FF1F3E);
 }
@@ -96,6 +100,6 @@ li {
   }
 
   .page-header h2 {
-      display: none;
+    display: none;
   }
 }
