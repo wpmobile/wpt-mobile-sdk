@@ -143,7 +143,7 @@ To receive these responses, define a `PaymentHandler`:
 
 **Swift**
 ```swift
-let responseHandler: PaymentHandler
+let paymentHandler: PaymentHandler
 
 let notificationReceived = { notification in
     // Display the text to the POS operator
@@ -158,7 +158,7 @@ let actionRequired = { action in
     // Perform the action
 
     // Respond to the action, confirming it is complete with the relevant data
-    responseHandler.sendActionConfirmation(action: actionConfirmation)
+    paymentHandler.sendActionConfirmation(action: actionConfirmation)
 }
 let paymentComplete { () in
     // The payment flow has completed, ready to start the next payment
@@ -168,7 +168,7 @@ let errorReceived { error in
     // Handle enexpected errors
 }
 
-responseHandler = PaymentHandler(notificationReceived: notificationReceived,
+paymentHandler = PaymentHandler(notificationReceived: notificationReceived,
                                  receiptReceived: receiptReceived,
                                  resultReceived: resultReceived,
                                  actionRequired: actionRequired,
@@ -178,7 +178,7 @@ responseHandler = PaymentHandler(notificationReceived: notificationReceived,
 
 **Kotlin**
 ```kotlin
-var responseHandler: PaymentHandler? = null
+var paymentHandler: PaymentHandler? = null
 
 val notificationReceived = fun (notification: PaymentNotification) {
     // Display the text to the POS operator
@@ -193,13 +193,13 @@ val actionRequested = fun (action: PaymentActionRequired) {
     // Perform the action
 
     // Respond to the action
-    responseHandler?.sendActionConfirmation(actionConfirmation)
+    paymentHandler?.sendActionConfirmation(actionConfirmation)
 }
 val paymentComplete = fun () {
     // The payment flow has completed, ready to start the next payment
 }
 
-responseHandler = object : PaymentHandler() {
+paymentHandler = object : PaymentHandler() {
     override fun onEvent(paymentEvent: PaymentEvent) {
         when (paymentEvent) {
             is PaymentNotification -> notificationReceived(paymentEvent)
@@ -222,13 +222,13 @@ And finally start the payment:
 **Swift**
 ```swift
 paymentManager.startPayment(request: paymentRequest
-                            handler: responseHandler)
+                            handler: paymentHandler)
 ```
 
 **Kotlin**
 ```kotlin
 paymentManager.startPayment(paymentRequest,
-                            responseHandler)
+                            paymentHandler)
 ```
 
 ### Settle a payment
@@ -246,7 +246,7 @@ As with making a payment, define a `PaymentHandler` to receive these responses, 
 
 **Swift**
 ```swift
-let responseHandler = ...
+let paymentHandler = ...
 
 let settleRequest = PaymentSettleRequest(
                       originalGatewayTransactionReference: "98765-4321-DF",
@@ -254,19 +254,19 @@ let settleRequest = PaymentSettleRequest(
                                         cardNumber: "123456XXXXXX1234"))
 
 paymentManager.settlePayment(request: settleRequest
-                             handler: responseHandler)
+                             handler: paymentHandler)
 ```
 
 **Kotlin**
 ```kotlin
-val responseHandler = ...
+val paymentHandler = ...
 
 val settleRequest = PaymentSettleRequest("98765-4321-DF",
                                          PaymentInstrument(PaymentCardDate(12, 21),
                                                            "123456XXXXXX1234"))
 
 paymentManager.settlePayment(settleRequest,
-                             responseHandler)
+                             paymentHandler)
 ```
 
 ### Cancel a payment
@@ -283,7 +283,7 @@ As with making and settling a payment, define a `PaymentHandler` to receive thes
 
 **Swift**
 ```swift
-let responseHandler = ...
+let paymentHandler = ...
 
 let cancelRequest = PaymentCancelRequest(
                       originalGatewayTransactionReference: "98765-4321-DF",
@@ -291,19 +291,19 @@ let cancelRequest = PaymentCancelRequest(
                                         cardNumber: "123456XXXXXX1234"))
 
 paymentManager.cancelPayment(request: cancelRequest
-                             handler: responseHandler)
+                             handler: paymentHandler)
 ```
 
 **Kotlin**
 ```kotlin
-val responseHandler = ...
+val paymentHandler = ...
 
 val cancelRequest = PaymentCancelRequest("98765-4321-DF",
                                          PaymentInstrument(PaymentCardDate(12, 21),
                                                            "123456XXXXXX1234"))
 
 paymentManager.cancelPayment(cancelRequest,
-                             responseHandler)
+                             paymentHandler)
 ```
 
 ### Query last payment result
@@ -318,22 +318,22 @@ As with making, settling or cancelling a payment, define a `PaymentHandler` to r
 
 **Swift**
 ```swift
-let responseHandler = ...
+let paymentHandler = ...
 
 let queryRequest = PaymentQueryRequest(merchantTransactionReference: "12345678AB")
 
 paymentManager.queryPayment(request: queryRequest
-                            handler: responseHandler)
+                            handler: paymentHandler)
 ```
 
 **Kotlin**
 ```kotlin
-val responseHandler = ...
+val paymentHandler = ...
 
 val queryRequest = PaymentQueryRequest("12345678AB")
 
 paymentManager.queryPayment(queryRequest,
-                            responseHandler)
+                            paymentHandler)
 ```
 
 <!-- Undocumented functionality
