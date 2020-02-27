@@ -48,7 +48,7 @@ ul,ol {
   list-style: none;
   padding: 0;
   margin: 0;
-  counter-reset: li
+  counter-reset: li;
 }
 
 li {
@@ -67,10 +67,10 @@ ol>li::before {
   color: #FF1F3E;
   display: inline-block; 
   width: 1em;
-  padding-right:0.5em
-  margin-left: 0em
+  padding-right:0.5em;
+  margin-left: 0em;
 }
 
 li {
-  counter-increment: li
+  counter-increment: li;
 }
