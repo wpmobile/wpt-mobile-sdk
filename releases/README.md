@@ -1,22 +1,22 @@
 # Releases
 
-## iOS
+## Android
 
 #### 0.0.1
 
 * [Download](android/0.0.1/worldpay-total-sdk.aar)
 * [API Reference](android/0.0.1/docs/)
 
-The initial release of the Worldpay Total Mobile SDK for iOS.
+The initial release of the Worldpay Total Mobile SDK for Android.
 
-## Android
+## iOS
 
 #### 0.0.1
 
 * [Download](ios/0.0.1/WorldpayTotalSDK.framework)
 * [API Reference](ios/0.0.1/docs/)
 
-The initial release of the Worldpay Total Mobile SDK for Android.
+The initial release of the Worldpay Total Mobile SDK for iOS.
 
 ## Test Harness
 
