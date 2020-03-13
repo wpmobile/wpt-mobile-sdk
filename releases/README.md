@@ -2,25 +2,25 @@
 
 ## Android
 
-#### 0.0.1
+#### 3.0.0-beta01
 
 * [Download](LINK_TBC)
-* [API Reference](android/0.0.1/docs/)
+* [API Reference](android/3.0.0-beta01/docs/)
 
 The initial release of the Worldpay Total Mobile SDK for Android.
 
 ## iOS
 
-#### 0.0.1
+#### 3.0.0 (beta01)
 
 * [Download](LINK_TBC)
-* [API Reference](ios/0.0.1/docs/)
+* [API Reference](ios/3.0.0-beta01/docs/)
 
 The initial release of the Worldpay Total Mobile SDK for iOS.
 
 ## Test Harness
 
-#### 0.0.1
+#### 3.0.0-beta01
 
 * [Download](LINK_TBC)
 
