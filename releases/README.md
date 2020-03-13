@@ -4,7 +4,7 @@
 
 #### 0.0.1
 
-* [Download](android/0.0.1/worldpay-total-sdk.aar)
+* [Download](LINK_TBC)
 * [API Reference](android/0.0.1/docs/)
 
 The initial release of the Worldpay Total Mobile SDK for Android.
@@ -13,7 +13,7 @@ The initial release of the Worldpay Total Mobile SDK for Android.
 
 #### 0.0.1
 
-* [Download](ios/0.0.1/WorldpayTotalSDK.framework)
+* [Download](LINK_TBC)
 * [API Reference](ios/0.0.1/docs/)
 
 The initial release of the Worldpay Total Mobile SDK for iOS.
@@ -22,7 +22,7 @@ The initial release of the Worldpay Total Mobile SDK for iOS.
 
 #### 0.0.1
 
-* [Download](test-harness/0.0.1/wpt-ipc-stub-0.0.1.jar)
+* [Download](LINK_TBC)
 
 The initial release of the SDK test harness.
 
