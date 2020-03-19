@@ -12,6 +12,7 @@
   * [Settle a payment](#settle-a-payment)
   * [Cancel a payment](#cancel-a-payment)
   * [Query the last payment result](#query-the-last-payment-result)
+  * [Query the last payment receipt](#query-the-last-payment-receipt)
 
 ## Set-up
 
@@ -73,17 +74,20 @@ The SDK requires 2 configuration parameters before you can use it to make reques
   * The IP address or domain name (e.g. `192.168.1.32`)
   * The port (e.g. `:443`)
   * A context path (e.g. `/stomp`)
-2. Your paypoint ID - the ID if the paypoint configured in IPC that you want to target from this mobile device
+2. The connection timeout - the number of seconds the SDK would wait for a process (such as a payment flow) to complete
+3. Your paypoint ID - the ID if the paypoint configured in IPC that you want to target from this mobile device
 
 **Swift**
 ```swift
 Configuration.shared.configure(url: "ws://192.168.1.32:1000/stomp",
+                               timeout: 300,
                                paypointId: "PAYPOINT_123")
 ```
 
 **Kotlin**
 ```kotlin
 Configuration.configure("wss://192.168.1.32:443/stomp",
+                        300,
                         "PAYPOINT_123")
 ```
 
@@ -117,8 +121,8 @@ To make a payment, first define the type of payment to make. The types of paymen
 * `CardSale`
 * `CardRefund`
 * `CardPreAuthSale`
-* `TokenCardSale`
-* `TokenCardRefund`
+* `TokenisedCardSale`
+* `TokenisedCardRefund`
 * `CashSale`
 * `CashRefund`
 
@@ -259,10 +263,11 @@ As with making a payment, define a `PaymentHandler` to receive these responses, 
 ```swift
 let paymentHandler = ...
 
-let settleRequest = PaymentSettleRequest(
-                      originalGatewayTransactionReference: "98765-4321-DF",
-                      PaymentInstrument(cardExpiryDate: PaymentCardDate(month: 12, year: 21),
-                                        cardNumber: "123456XXXXXX1234"))
+let settleRequest = CardSettlement(
+                      value: 1099,
+                      gatewayTransactionReference: "98765-4321-DF",
+                      cardNumber: "123456XXXXXX1234")
+                      CardDate(month: 12, year: 21))
 
 paymentManager.settlePayment(request: settleRequest
                              handler: paymentHandler)
@@ -272,9 +277,11 @@ paymentManager.settlePayment(request: settleRequest
 ```kotlin
 val paymentHandler = ...
 
-val settleRequest = PaymentSettleRequest("98765-4321-DF",
-                                         PaymentInstrument(PaymentCardDate(12, 21),
-                                                           "123456XXXXXX1234"))
+val settleRequest = CardSettlement(
+                      1099,
+                      "98765-4321-DF",
+                      "123456XXXXXX1234"
+                      PaymentCardDate(12, 21))
 
 paymentManager.settlePayment(settleRequest,
                              paymentHandler)
@@ -319,7 +326,7 @@ paymentManager.cancelPayment(cancelRequest,
 
 ### Query the last payment result
 
-To query the result of the last payment, you should pass the merchant transaction reference of the payment.
+To query the *result* of the last payment, you should pass the merchant transaction reference of the payment.
 
 During the query flow, the following real-time responses will be returned to your app by the SDK:
 
@@ -331,7 +338,7 @@ As with making, settling or cancelling a payment, define a `PaymentHandler` to r
 ```swift
 let paymentHandler = ...
 
-let queryRequest = PaymentQueryRequest(merchantTransactionReference: "12345678AB")
+let queryRequest = PaymentResultQuery(merchantTransactionReference: "12345678AB")
 
 paymentManager.queryPayment(request: queryRequest
                             handler: paymentHandler)
@@ -341,15 +348,47 @@ paymentManager.queryPayment(request: queryRequest
 ```kotlin
 val paymentHandler = ...
 
-val queryRequest = PaymentQueryRequest("12345678AB")
+val queryRequest = PaymentResultQuery("12345678AB")
+
+paymentManager.queryPayment(queryRequest,
+                            paymentHandler)
+```
+
+### Query the last payment receipt
+
+To query the *receipt* of the last payment, you should pass the merchant transaction reference of the payment and the type of receipt required.
+
+During the query flow, the following real-time responses will be returned to your app by the SDK:
+
+* One `PaymentReceipt` - the content of a receipt to be printed, these will be the customer or merchant copy, depending on your request
+
+As with making, settling or cancelling a payment, define a `PaymentHandler` to receive these responses, then send the query payment request:
+
+**Swift**
+```swift
+let paymentHandler = ...
+
+let queryRequest = PaymentReceiptQuery(
+                     merchantTransactionReference: "12345678AB"
+                     type: .customer)
+
+paymentManager.queryPayment(request: queryRequest
+                            handler: paymentHandler)
+```
+
+**Kotlin**
+```kotlin
+val paymentHandler = ...
+
+val queryRequest = PaymentReceiptQuery(
+                     "12345678AB",
+                     ReceiptType.CUSTOMER)
 
 paymentManager.queryPayment(queryRequest,
                             paymentHandler)
 ```
 
 <!-- Undocumented functionality
-
-### Query last payment receipt
 
 ## Tax
 
