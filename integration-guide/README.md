@@ -1,6 +1,6 @@
 # Integration Guide
 
-> **Note:** The following guide is subject to change and available as a preview only.
+> **Note:** The following guide reflects a beta version of the SDK, an is subject to change prior to general availability of the SDK.
 
 * [Set-up](#set-up)
   * [Pre-requisites](#pre-requisites)
