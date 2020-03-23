@@ -106,7 +106,7 @@ java -jar wpt-ipc3-stub-<version>.jar
 You can check the test harness is running by visiting [http://localhost:8080/actuator/health](http://localhost:8080/actuator/health).
 
 
-You can configure your SDK instance to connect to the test harness (see **Configure the SDK** above) by providing the a host URL as `ws://localhost:8080/stomp`.
+You can configure your SDK instance to connect to the test harness (see **Configure the SDK** above) by providing the host URL as `ws://localhost:8080/stomp`.
 
 To customise the port that the server runs on, add `-Dspring-boot.run.arguments=--server.port=XXXX` to the java command. The protocol (`ws://`) and context path (`/stomp`) cannot be customised.
 
