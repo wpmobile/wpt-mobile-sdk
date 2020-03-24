@@ -5,7 +5,7 @@
 The Android SDK is provided via Maven repository, see [Integration Guide](../integration-guide/) for details on how to add this to your gradle configuration.
 
 | Maven artifact configuration | Value |
-| ------------- | --- | --- |
+| --- | --- |
 | Repository URL | `http://ec2-34-246-168-118.eu-west-1.compute.amazonaws.com/artifactory/libs-release/` |
 | Repository credentials | *Contact Worldpay* |
 | Group ID | `com.worldpay` |
