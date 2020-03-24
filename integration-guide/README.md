@@ -37,7 +37,7 @@ In order to use the Worldpay Total Mobile SDK for Android, you must meet the fol
 
 #### iOS
 
-The Worldpay Total Mobile SDK for iOS is provided as a Framework. See [Releases](../releases/)] for the available versions.
+The Worldpay Total Mobile SDK for iOS is provided as a Framework. See [Releases](../releases#android)] for the available versions.
 
 For each target of your app, add `WorldpayTotalSDK.framework` to your target's "Embedded Binaries", Xcode will also include this in the "Linked Frameworks and Libraries" for your target.
 
@@ -61,7 +61,7 @@ allprojects {
 }
 ```
 
-Then define the Worldpay Total Mobile SDK as a dependency for your app by adding the following in the `build.gradle` of your app, setting `<version>` as the version number you require from [Releases](../releases/):
+Then define the Worldpay Total Mobile SDK as a dependency for your app by adding the following in the `build.gradle` of your app, setting `<version>` as the version number you require from [Releases](../releases#ios):
 
 ```python
 dependencies {
@@ -101,10 +101,10 @@ A test harness is available for the SDK which allows payment flows to be execute
 
 The SDK test harness is an executable Java application that can be run on a Windows/Linux PC or Mac which the mobile device using the SDK can connect to.
 
-Run the test harness application by executing the following from your command line:
+Download the test harness from [Releases](../releases#test-harness), and then run it by executing the following from your command line:
 
 ```shell
-java -jar wpt-ipc3-stub-<version>.jar
+java -jar worldpay-total-sdk-test-harness-<version>.jar
 ```
 
 You can check the test harness is running by visiting [http://localhost:8080/actuator/health](http://localhost:8080/actuator/health).
