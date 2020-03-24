@@ -2,13 +2,11 @@
 
 ## Android
 
-> The Android SDK is provided via Maven repository, see [Integration Guide](../integration-guide#android-1) for details on how to add this to your gradle configuration.
+> The Android SDK is provided via a Maven repository, see [Integration Guide](../integration-guide#android-1) for details on how to add this to your gradle configuration.
 
-#### 3.0.0-beta01
+#### 3.0.0-beta01 - [API Reference](LINK_TBC)
 
-* [API Reference](android/3.0.0-beta01/docs/)
-
-The initial release of the Worldpay Total Mobile SDK for Android.
+The initial beta release of the Worldpay Total Mobile SDK for Android.
 
 ## iOS
 
@@ -16,7 +14,7 @@ The initial release of the Worldpay Total Mobile SDK for Android.
 
 #### 3.0.0-beta01 - [Download](LINK_TBC)
 
-The initial release of the Worldpay Total Mobile SDK for iOS.
+The initial beta release of the Worldpay Total Mobile SDK for iOS.
 
 ## Test Harness
 
@@ -24,6 +22,6 @@ The initial release of the Worldpay Total Mobile SDK for iOS.
 
 #### 3.0.0-beta01 - [Download](LINK_TBC)
 
-The initial release of the SDK test harness.
+The initial beta release of the SDK's test harness.
 
 ###### ©2020 Worldpay, LLC and/or its affiliates. All rights reserved.
