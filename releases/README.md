@@ -22,17 +22,15 @@ The initial release of the Worldpay Total Mobile SDK for Android.
 
 The iOS SDK is provided as a zip file containing the Framework and the API reference documentation.
 
-#### 3.0.0 (beta01)
-
-* [Download ZIP](LINK_TBC)
+#### 3.0.0-beta01 - [Download](LINK_TBC)
 
 The initial release of the Worldpay Total Mobile SDK for iOS.
 
 ## Test Harness
 
-#### 3.0.0-beta01
+The SDK test hardness is provided as an executable jar file.
 
-* [Download](LINK_TBC)
+#### 3.0.0-beta01 - [Download](LINK_TBC)
 
 The initial release of the SDK test harness.
 
