@@ -37,7 +37,7 @@ In order to use the Worldpay Total Mobile SDK for Android, you must meet the fol
 
 #### iOS
 
-The Worldpay Total Mobile SDK for iOS is provided as a Framework. See [Releases](../releases#android)] for the available versions.
+The Worldpay Total Mobile SDK for iOS is provided as a Framework. See [Releases](../releases#ios)] for the available versions.
 
 For each target of your app, add `WorldpayTotalSDK.framework` to your target's "Embedded Binaries", Xcode will also include this in the "Linked Frameworks and Libraries" for your target.
 
@@ -61,7 +61,7 @@ allprojects {
 }
 ```
 
-Then define the Worldpay Total Mobile SDK as a dependency for your app by adding the following in the `build.gradle` of your app, setting `<version>` as the version number you require from [Releases](../releases#ios):
+Then define the Worldpay Total Mobile SDK as a dependency for your app by adding the following in the `build.gradle` of your app, setting `<version>` as the version number you require from [Releases](../releases#android):
 
 ```python
 dependencies {
