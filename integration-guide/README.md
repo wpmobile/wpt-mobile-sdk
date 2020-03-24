@@ -37,31 +37,35 @@ In order to use the Worldpay Total Mobile SDK for Android, you must meet the fol
 
 #### iOS
 
-The Worldpay Total Mobile SDK for iOS is provided as a Framework.
+The Worldpay Total Mobile SDK for iOS is provided as a Framework. See [Releases](../releases/)] for the available versions.
 
 For each target of your app, add `WorldpayTotalSDK.framework` to your target's "Embedded Binaries", Xcode will also include this in the "Linked Frameworks and Libraries" for your target.
 
 #### Android
 
-The Worldpay Total Mobile SDK for Android is provided as an `aar` file.
+The Worldpay Total Mobile SDK for Android is provided as a Maven dependency.
 
-Add the following in the `build.gradle` of your project to specify a local directory where local dependencies are kept (`libs` in this example, but any can be used):
+Add the following in the `build.gradle` of your project to specify our Maven repository where the SDK will be downloaded from:
 
 ```python
 allprojects {
-   repositories {
-      flatDir {
-        dirs 'libs'
-      }
-   }
+    repositories {
+        maven {
+            setUrl("http://ec2-34-246-168-118.eu-west-1.compute.amazonaws.com/artifactory/libs-release/")
+            credentials {
+                username = <username-provided-by-worldpay>
+                password = <password-provided-by-worldpay>
+            }
+        }
+    }
 }
 ```
 
-Then, copy the `worldpay-total-sdk.aar` file into that local directory, and define it as a dependency for your app by adding the following to your app's `build.gradle`:
+Then define the Worldpay Total Mobile SDK as a dependency for your app by adding the following in the `build.gradle` of your app, setting `<version>` as the version number you require from [Releases](../releases/):
 
 ```python
 dependencies {
-    compile(name:'worldpay-total-sdk', ext:'aar')
+    compile(name:'com.worldpay:worldpay-total-sdk:<version>')
 }
 ```
 
