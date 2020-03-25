@@ -1,6 +1,6 @@
 # Integration Guide
 
-> **Note:** The following guide reflects a beta version of the SDK, an is subject to change prior to general availability of the SDK.
+> **Note:** The following guide reflects a beta version of the SDK, and is subject to change prior to general availability of the SDK.
 
 * [Set-up](#set-up)
   * [Pre-requisites](#pre-requisites)
@@ -71,7 +71,7 @@ dependencies {
 
 ### Configure the SDK
 
-The SDK requires 2 configuration parameters before you can use it to make requests:
+The SDK requires 3 configuration parameters before you can use it to make requests:
 
 1. The host URL - this is the URL where your IPC instance has been deployed, this URL should contain:
   * The protocol (`wss://` or `ws://`)
@@ -79,7 +79,7 @@ The SDK requires 2 configuration parameters before you can use it to make reques
   * The port (e.g. `:443`)
   * A context path (e.g. `/stomp`)
 2. The connection timeout - the number of seconds the SDK would wait for a process (such as a payment flow) to complete
-3. Your paypoint ID - the ID if the paypoint configured in IPC that you want to target from this mobile device
+3. Your paypoint ID - the ID of the paypoint configured in IPC that you want to target from this mobile device
 
 **Swift**
 ```swift
@@ -184,7 +184,7 @@ let paymentComplete { () in
 }
 
 let errorReceived { error in
-    // Handle enexpected errors
+    // Handle unexpected errors
 }
 
 paymentHandler = PaymentHandler(notificationReceived: notificationReceived,
