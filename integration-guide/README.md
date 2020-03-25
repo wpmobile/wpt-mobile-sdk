@@ -22,7 +22,7 @@
 
 In order to use the Worldpay Total Mobile SDK for iOS, you must meet the following requirements:
 
-* Your project must use **XCode 11.3** or above
+* Your project must use **XCode 11.3** *(Support for XCode 11.4 coming soon)*
 * Your project must target **iOS 9.0** or above
 * Swift projects must use **Swift 5.0** or above
 
