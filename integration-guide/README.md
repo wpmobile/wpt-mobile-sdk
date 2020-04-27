@@ -24,7 +24,7 @@ In order to use the Worldpay Total Mobile SDK for iOS, you must meet the followi
 
 * Your project must use **XCode 11.3** *(Support for XCode 11.4 coming soon)*
 * Your project must target **iOS 9.0** or above
-* Swift projects must use **Swift 5.0** or above
+* Swift projects must use **Swift 5.1** *(Support for Swift 5.2 coming soon)*
 
 #### Android
 
@@ -112,7 +112,7 @@ You can check the test harness is running by visiting [http://localhost:8080/act
 
 You can configure your SDK instance to connect to the test harness (see **Configure the SDK** above) by providing the host URL as `ws://localhost:8080/stomp`.
 
-To customise the port that the server runs on, add `-Dspring-boot.run.arguments=--server.port=XXXX` to the java command. The protocol (`ws://`) and context path (`/stomp`) cannot be customised.
+To customise the port that the server runs on, add `--server.port=XXXX` after the jar name in the java command. The protocol (`ws://`) and context path (`/stomp`) cannot be customised.
 
 ## Payments
 
