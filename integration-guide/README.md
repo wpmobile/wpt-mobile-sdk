@@ -39,7 +39,11 @@ In order to use the Worldpay Total Mobile SDK for Android, you must meet the fol
 
 The Worldpay Total Mobile SDK for iOS is provided as a Framework. See [Releases](../releases#ios) for the available versions.
 
-For each target of your app, add `WorldpayTotalSDK.framework` to your target's "Embedded Binaries", Xcode will also include this in the "Linked Frameworks and Libraries" for your target.
+For each target of your app:
+
+1. Add `WorldpayTotalSDK.framework` to *"Framworks, Libraries, and Embedded Content"*
+2. Add the directory you have put the framework file in to *“Framework Search Paths”*, e.g. `$(PROJECT_DIR)/Frameworks/` (recursive)
+3. Add the `Dependencies` directory inside the framework file to *“Import Paths”*, e.g. `$(PROJECT_DIR)/Frameworks/WorldpayTotalSDK.framework/Dependencies/` (recursive)
 
 #### Android
 
