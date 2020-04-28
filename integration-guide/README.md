@@ -81,20 +81,21 @@ The SDK requires 3 configuration parameters before you can use it to make reques
   * The protocol (`wss://` or `ws://`)
   * The IP address or domain name (e.g. `192.168.1.32`)
   * The port (e.g. `:443`)
-  * A context path (e.g. `/stomp`)
+  * The context path that the IPC application is running at (e.g. `/ipc-app`)
+  * The path to IPC's STOMP endpoint, this is `/stomp/`
 2. The connection timeout - the number of seconds the SDK would wait for a process (such as a payment flow) to complete
 3. Your paypoint ID - the ID of the paypoint configured in IPC that you want to target from this mobile device
 
 **Swift**
 ```swift
-Configuration.shared.configure(url: "ws://192.168.1.32:1000/stomp",
+Configuration.shared.configure(url: "wss://192.168.1.32:443/ipc-app/stomp/",
                                timeout: 300,
                                paypointId: "PAYPOINT_123")
 ```
 
 **Kotlin**
 ```kotlin
-Configuration.configure("wss://192.168.1.32:443/stomp",
+Configuration.configure("wss://192.168.1.32:443/ipc-app/stomp/",
                         300,
                         "PAYPOINT_123")
 ```
@@ -114,7 +115,7 @@ java -jar worldpay-total-sdk-test-harness-<version>.jar
 You can check the test harness is running by visiting [http://localhost:8080/actuator/health](http://localhost:8080/actuator/health).
 
 
-You can configure your SDK instance to connect to the test harness (see **Configure the SDK** above) by providing the host URL as `ws://localhost:8080/stomp`.
+You can configure your SDK instance to connect to the test harness (see **Configure the SDK** above) by providing the host URL as `ws://localhost:8080/stomp/` (note that the test hardness runs on the root context path so is not required in the URL path).
 
 To customise the port that the server runs on, add `--server.port=XXXX` after the jar name in the java command. The protocol (`ws://`) and context path (`/stomp`) cannot be customised.
 
