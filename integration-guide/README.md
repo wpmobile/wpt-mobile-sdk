@@ -115,7 +115,7 @@ java -jar worldpay-total-sdk-test-harness-<version>.jar
 You can check the test harness is running by visiting [http://localhost:8080/actuator/health](http://localhost:8080/actuator/health).
 
 
-You can configure your SDK instance to connect to the test harness (see **Configure the SDK** above) by providing the host URL as `ws://localhost:8080/stomp/` (note that the test hardness runs on the root context path so is not required in the URL path).
+You can configure your SDK instance to connect to the test harness (see **Configure the SDK** above) by providing the host URL as `ws://localhost:8080/stomp/` (note that the test harness runs on the root context path so is not required in the URL path).
 
 To customise the port that the server runs on, add `--server.port=XXXX` after the jar name in the java command. The protocol (`ws://`) and context path (`/stomp`) cannot be customised.
 
