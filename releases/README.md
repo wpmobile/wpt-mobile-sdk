@@ -4,7 +4,7 @@
 
 > The Android SDK is provided via a Maven repository, see [Integration Guide](../integration-guide#android-1) for details on how to add this to your gradle configuration.
 
-#### 3.0.0-beta03 - [API Reference](http://ec2-34-246-168-118.eu-west-1.compute.amazonaws.com/artifactory/libs-release/downloads/worldpay-total-sdk-android/worldpay-total-sdk-3.0.0-beta03-javadoc.zip)
+#### 3.0.0-beta03 - [API Reference](http://ec2-34-246-168-118.eu-west-1.compute.amazonaws.com/artifactory/libs-release/com/worldpay/worldpay-total-sdk/3.0.0-beta03/javadoc.zip)
 
 * Added a new POS registration API
 * Added a new abort payment API
