@@ -1,9 +1,3 @@
 ### Integration Guide
 
-A guide to integrating the Worldpay Total Mobile SDK can be found [here](integration-guide).
-
-### Releases
-
-All available releases of the Worldpay Total Mobile SDK can be found [here](releases).
-
-###### ©2020 Worldpay, LLC and/or its affiliates. All rights reserved.
+Documentation for the Worldpay Total Mobile SDK can now be found at [https://developer.worldpay.com/docs/worldpay-total-ipc-3/mobile-sdk](https://developer.worldpay.com/docs/worldpay-total-ipc-3/mobile-sdk)
